@@ -29,24 +29,37 @@ employess.forEach(element => {
 }
 show(employess)
 
+let j=0;
 let min=employess[0].sal
 let minsal = (employess)=>{
-    employess.forEach(element=>{
+    employess.forEach((element,index)=>{
         if(element.sal<min){
             min=element.sal
+            j=index;
         }
     })
-    console.log("Min sal=> ",min)
+    console.log("Min sal=> ",min , employess[j].name)
 }
 let max=employess[0].sal
+let index=0;
 let maxsal = (employess)=>{
-    employess.forEach(element=>{
+    employess.forEach((element)=>{
         if(element.sal>max){
             max=element.sal
+            index++
         }
     })
-    console.log("Max sal=> ",max)
+    console.log(index)
+    console.log("Max sal=> ",max , employess[index+1].name)
 }
+ 
+let avgMinMax = (min,max)=>{
+    console.log ((min+max)/2)
+}
+
+
+
 
 minsal(employess)
 maxsal(employess)
+avgMinMax(min,max)
