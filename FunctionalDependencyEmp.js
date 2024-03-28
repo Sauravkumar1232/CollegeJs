@@ -17,11 +17,39 @@ console.log("start");
 //   }).catch((error) => {
 //        console.log("error", error);
 //      })
-getUser(11)
-.then(user=> getRepos(user.name))
-.then(repos=>getCommit(repos[0]))
-.then(commit=>console.log(commit,'commit'))
-.catch((error)=>{console.log('error'),error})
+// getUser(11)
+// .then(user=> getRepos(user.name))
+// .then(repos=>getCommit(repos[0]))
+// .then(commit=>console.log(commit,'commit'))
+// .catch((error)=>{console.log('error'),error})
+
+
+async function display(){
+    try {
+        
+        console.log("start...")
+        let user = await getUser(1);
+        console.log(user,"user")
+        
+        let repos = await getRepos(user.name)
+        console.log(repos,"repo")
+    
+        let commit = await getCommit(repos[0])
+        console.log(commit,"commit")
+        console.log("end...")
+    } catch (error) {
+         console.log(error,'error')
+    }
+
+
+
+}
+display()
+// getUser(11)
+// .then(user=> getRepos(user.name))
+// .then(repos=>getCommit(repos[0]))
+// .then(commit=>console.log(commit,'commit'))
+// .catch((error)=>{console.log('error'),error})
 
 console.log("end..");
 function getUser(id) {
