@@ -1,54 +1,55 @@
 <script>
-    let cart = ['mobile','pen','laptop']
-    function createOrder(cart){
-        let pr = new Promise((resolve,reject)=>{
-            setTimeout(() => {
-                let orderId = 12345;
-                console.log("Order Created")
-                if(orderId===12345){
-                    resolve(orderId)
-                }else{
-                    reject(orderId)
-                }
-            }, 3000);
-            return pr
-        })
-    }
+  let cart = ["mobile", "pen", "laptop"];
+  function createOrder(cart) {
+    let pr = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        let orderId = 12345;
+        console.log("Order Created");
+        if (orderId === 12345) {
+          resolve(orderId);
+        } else {
+          reject(orderId);
+        }
+      }, 3000);
+    });
+    return pr;
+  }
 
-    function procederForPayment(orderId){
-        let pr = new Promise((resolve,reject)=>{
-            setTimeout(() => {
-                let orderId = 12345;
-                if(orderId===12345){
-                    resolve("Proced for payment")
-                }else{
-                    reject(orderId)
-                }
-            }, 3000);
-            return pr
-        })
-    }
+  function procederForPayment(orderId) {
+    let pr = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log("procede for payment");
+        let orderId = 12345;
+        if (orderId === 12345) {
+          resolve("Proced for payment");
+        } else {
+          reject("error..");
+        }
+      }, 3000);
+    });
+    return pr;
+  }
 
-    function paymentInfo(paymentInfo){
-        let pr = new Promise((resolve,reject)=>{
-            setTimeout(() => {
-                let orderId = 12345;
-                console.log("Procede for payment info")
-                if(orderId===12345){
-                    resolve("Payment info is here")
-                }else{
-                    reject("error in paymentty")
-                }
-            }, 3000);
-            return pr
-        })
-    }
+  function paymentInfo(paymentInfo) {
+    let pr = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        let orderId = 12345;
+        console.log("Procede for payment info");
+        if (orderId === 12345) {
+          resolve("Payment inf    o is here");
+        } else {
+          reject("error in paymentty");
+        }
+      }, 3000);
+    });
+    return pr;
+  }
 
-    createOrder(cart).then((orderId)=>{
-          return  procederForPayment(orderId)
-    }).then((paymentInfo)=>{
-        return paymentInfo(orderId)
-    }).catch((error)=>{
-        console.log("error")
-    })
+  createOrder(cart).then((orderId) => {
+      return procederForPayment(orderId);
+    }).then((paymentInfo) => {
+      return paymentInfo(paymentInfo);
+    }).catch((error) => {
+      console.log(error, "error");
+    });
 </script>
